@@ -1,0 +1,66 @@
+[versions]
+# https://en.wikipedia.org/wiki/Java_version_history#Release_table
+java = "21"
+
+# https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter
+junit-jupiter = "5.13.0"
+
+# https://mvnrepository.com/artifact/org.junit.platform/junit-platform-launcher
+junit-platform-launcher = "1.13.0"
+
+# https://mvnrepository.com/artifact/io.kotest/kotest-assertions-core
+kotest = "5.9.1"
+
+# https://kotlinlang.org/docs/releases.html#release-details
+# https://plugins.gradle.org/plugin/org.jetbrains.kotlin.plugin.serialization
+kotlin = "2.1.21"
+
+# https://mvnrepository.com/artifact/io.github.oshai/kotlin-logging
+kotlin-logging = "7.0.7"
+
+# https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-core
+# https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-test
+kotlinx-coroutines = "1.10.2"
+
+# https://mvnrepository.com/artifact/org.liquibase/liquibase-core
+liquibase = "4.32.0"
+
+# https://mvnrepository.com/artifact/com.mattbertolini/liquibase-slf4j
+liquibase-slf4j = "5.1.0"
+
+# https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
+logback-classic = "1.5.18"
+
+# https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client
+mariadb-client = "3.5.3"
+
+# https://mvnrepository.com/artifact/com.vanniktech.maven.publish/com.vanniktech.maven.publish.gradle.plugin
+maven-publish = "0.32.0"
+
+# https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc
+sqlite-jdbc = "3.49.1.0"
+
+# https://mvnrepository.com/artifact/org.testcontainers/mariadb
+testcontainers = "1.21.1"
+
+[libraries]
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junit-platform-launcher" }
+kotest-assertions-core = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
+kotlin-logging = { module = "io.github.oshai:kotlin-logging", version.ref = "kotlin-logging" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
+liquibase-core = { module = "org.liquibase:liquibase-core", version.ref = "liquibase" }
+liquibase-slf4j = { module = "com.mattbertolini:liquibase-slf4j", version.ref = "liquibase-slf4j" }
+logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback-classic" }
+mariadb-client = { module = "org.mariadb.jdbc:mariadb-java-client", version.ref = "mariadb-client" }
+sqlite-jdbc = { module = "org.xerial:sqlite-jdbc", version.ref = "sqlite-jdbc" }
+testcontainers-mariadb = { module = "org.testcontainers:mariadb", version.ref = "testcontainers" }
+
+[bundles]
+kotest = [
+  "kotest-assertions-core",
+]
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "maven-publish" }

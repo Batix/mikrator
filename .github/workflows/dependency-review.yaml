@@ -1,0 +1,18 @@
+name: "Dependency Review"
+
+on:
+  pull_request:
+
+permissions:
+  contents: "read"
+
+jobs:
+  review:
+    runs-on: "ubuntu-latest"
+    steps:
+      # https://github.com/marketplace/actions/dependency-review
+      - name: "Dependency Review"
+        uses: "actions/dependency-review-action@da24556b548a50705dd671f47852072ea4c105d9" # v4.7.1
+        with:
+          retry-on-snapshot-warnings: "true"
+          retry-on-snapshot-warnings-timeout: "600"
